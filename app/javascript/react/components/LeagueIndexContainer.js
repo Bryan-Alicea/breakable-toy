@@ -4,10 +4,10 @@ import LeagueTile from './LeagueTile'
 
 const LeagueIndexContainer = (props) => {
     const [leagues, setLeagues] = useState([])
-
+    
     useEffect(() => {
         fetch("/api/v1/leagues")
-        .then(reponse => {
+        .then(response => {
             if(response.ok){
                 return response
             } else {
@@ -16,14 +16,15 @@ const LeagueIndexContainer = (props) => {
                 throw(error)
             }
         })
-        .then(reponse => {
+        .then(response => {
             return response.json()
         })
         .then(body => {
             setLeagues(body)
+            
         }).catch(error => console.error(`Error in fetch: ${error.message}`))
     }, [])
-
+    
     let Leaguetiles = leagues.map((league) => {
         return(
          <LeagueTile
@@ -36,7 +37,7 @@ const LeagueIndexContainer = (props) => {
          />
         )
     })
-
+        
     return (
         <div>
             {Leaguetiles}
