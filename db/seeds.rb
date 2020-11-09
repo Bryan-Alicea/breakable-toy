@@ -1,7 +1,2 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+league_1 = League.create(name: "Premier League", number_of_teams: "20", year_founded: 1992, description: "The Premier League is an english league. It is the first division of football in england. It is made of 20 teams and each team play 38 games in a season.")
